@@ -8,17 +8,17 @@
                     <%= f.hidden_field :recipient, value: @user.id %>
                 </div>
                 <div class="small-3 medium-1 columns">
-                    <%= f.submit 'send', class: 'button tiny round' %>
+                    <%= f.submit '⏎', class: 'button tiny round' %>
                 </div>
             </div>
         <% end %>
         <% if @sortedmsgs %>
             <% @sortedmsgs.each do |msg| %>
                 <p class="msg_<% if msg.user_id == current_user.id %>from_me<% else %>to_me<% end %>">
-                    <%= msg.content %>
                     <% if msg.user_id == current_user.id and msg.viewed != true %>
-                        <%= link_to 'delete', msg, method: :delete, class: 'delete' %>
+                        <%= link_to 'Ⓧ', msg, method: :delete, class: 'delete' %>
                     <% end %>
+                    <%= msg.content %>
                 </p>
             <% end %>
         <% end %>

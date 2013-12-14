@@ -15,10 +15,12 @@ class MessagesController < ApplicationController
 
   def destroy
     msg = Message.find(request[:id])
-    if msg.viewed != true
-      msg.destroy
-    else
-      flash.now['error'] = 'Message has been viewed already'
+    if msg.user_id == current_user.id
+      if msg.viewed != true
+        msg.destroy
+      else
+        flash.now['error'] = 'Message has been viewed already'
+      end
     end
     redirect_to :back
   end
