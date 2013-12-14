@@ -1,0 +1,13 @@
+<div class="panel text-justify">
+    <p>Send rant about boss to boss... oops!!! UNDO!</p>
+
+    <p>How many times did you (accidentally) send a text to somebody and wished immediately after hitting 'send' that you didn't?</p>
+
+    <h3>Introducing send14ops!</h3>
+
+    <p>With send14oops you can send 140 characters to your contacts at a time. And if you realize you've made a mistake undo it. You can delete messages as long as the recipient hasn't read it. It never happened.</p>
+    <% if signed_in? %>
+    <% else %>
+        <div class="text-center"><%= link_to 'Sign in/up', signin_path, class: 'button large round' %></div>
+    <% end %>
+</div>
