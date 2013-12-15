@@ -11,6 +11,11 @@
             <%= f.password_field :password %>
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation %>
+            <%= f.label 'Show (time) ago' %>
+            <select name="user[showtimeinfo]">
+                <option value="true"<% if current_user.showtimeinfo == 'true' %> selected<% end %>>Show</option>
+                <option value="false"<% if current_user.showtimeinfo == 'false' %> selected<% end %>>Don't show</option>
+            <select>
             <%= f.submit 'Save changes', class: 'button tiny round' %>
         <% end %>
     </div>

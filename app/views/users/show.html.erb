@@ -8,7 +8,7 @@
                     <%= f.hidden_field :recipient, value: @user.id %>
                 </div>
                 <div class="small-3 medium-1 columns">
-                    <%= f.submit '⏎', class: 'button tiny round' %>
+                    <%= f.submit '↵', class: 'button tiny round' %>
                 </div>
             </div>
         <% end %>
@@ -19,6 +19,9 @@
                         <%= link_to 'Ⓧ', msg, method: :delete, class: 'delete' %>
                     <% end %>
                     <%= msg.content %>
+                    <% if current_user.showtimeinfo == 'true' %>
+                        <span class="right ago"><%= time_ago_in_words(msg.created_at) %> ago</span>
+                    <% end %>
                 </p>
             <% end %>
         <% end %>
