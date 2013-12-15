@@ -18,7 +18,7 @@
                 <nav class="tab-bar">
                     <section class="left-small"><a class="left-off-canvas-toggle menu-icon"><span></span></a></section>
                     <section class="middle tab-bar-section">
-                        <h1 class="title">send14ops!<% if signed_in? %> - <%= current_user.name %><% end %></h1>
+                        <h1 class="title"><% if signed_in? %><%= current_user.name.strip %><% else %>send14ops!<% end %></h1>
                     </section>
                 </nav>
                 <aside class="left-off-canvas-menu">
